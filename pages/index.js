@@ -9,7 +9,6 @@ export default function index() {
         <div className="background-image">
           <img src="/images/background-index.png" />
         </div>
-
         <Container>
           <Row>
             <Col md="6">
@@ -17,7 +16,7 @@ export default function index() {
                 <div className={`flipper`}>
                   <div className="back">
                     <div className="hero-section-content">
-                      <h2> Full Stack Web Developer </h2>
+                      <h2> Front end engineer </h2>
                       <div className="hero-section-content-intro">
                         Have a look at my portfolio and job history.
                   </div>
@@ -33,7 +32,7 @@ export default function index() {
             <Col md="6" className="hero-welcome-wrapper">
               <div className="hero-welcome-text">
                 <h1>
-                  Welcome to the portfolio website of Filip Jerga.
+                  Welcome to the portfolio website of Mihir Suchak.
                   Get informed, collaborate and discover projects I was working on through the years!
             </h1>
               </div>
