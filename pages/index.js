@@ -1,6 +1,9 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout'
 import { Row, Col, Container } from 'reactstrap';
+import Typed from 'react-typed';
+
+const ROLES = ['Developers', 'Tech Lover', 'Team Player', 'React.js'];
 
 export default function index() {
   return (
@@ -16,7 +19,7 @@ export default function index() {
                 <div className={`flipper`}>
                   <div className="back">
                     <div className="hero-section-content">
-                      <h2> Front end engineer </h2>
+                      <h2>Front end engineer </h2>
                       <div className="hero-section-content-intro">
                         Have a look at my portfolio and job history.
                   </div>
@@ -36,10 +39,22 @@ export default function index() {
                   Get informed, collaborate and discover projects I was working on through the years!
             </h1>
               </div>
+              <Typed
+                loop
+                strings={ROLES}
+                typeSpeed={70}
+                backSpeed={70}
+                backDelay={1000}
+                // attr="placeholder"
+                loopCount={0}
+                showCursor
+                className="self-typed"
+                cursorChar="|"
+              />
               <div className="hero-welcome-bio">
                 <h1>
                   Let's take a look on my work.
-            </h1>
+                </h1>
               </div>
             </Col>
           </Row>

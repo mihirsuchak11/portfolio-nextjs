@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 // import Link from 'next/link';
 import { Link } from '../routes'
+import BaseLayout from '../components/layouts/BaseLayout'
 
 export default class Portfolio extends Component {
 
@@ -32,11 +33,11 @@ export default class Portfolio extends Component {
         const { posts } = this.props;
 
         return (
-            <div>
+            <BaseLayout>
                 <ul>
                     {this.renderPost(posts)}
                 </ul>
-            </div>
+            </BaseLayout>
         )
     }
 }
