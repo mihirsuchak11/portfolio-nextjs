@@ -1,11 +1,18 @@
 @import './shared/fonts';
 
-// pages
+// Components
+@import './components/header';
+
+// Pages
 @import './index';
 
 html,
 body {
   font-family: 'Montserrat', 'Helvetica' !important;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .self-typed {

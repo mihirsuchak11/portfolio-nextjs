@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Collapse,
     Navbar,
@@ -13,7 +13,7 @@ const BsNavLink = props => {
     const { title, href } = props;
     return (
         <Link href={href} >
-            <a className="nav-link">
+            <a className="nav-link port-navbar-link">
                 {title}
             </a>
         </Link>
@@ -41,28 +41,29 @@ const NavLinkContent = [
         href: '/cv',
         title: "CV",
     },
+];
 
-]
-export default class Header extends React.Component {
+export default function Header() {
 
-    state = { isOpen: false }
-    toggle = () => this.setState({ isOpen: !this.state.isOpen })
+    const [isOpen, setIsOpen] = useState(false);
 
-    render() {
-        return (
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
-                <NavbarToggler onClick={this.toggle} />
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
-                        {NavLinkContent.map((navLink, index) => (
-                            <NavItem key={index}>
-                                <BsNavLink href={navLink.href} title={navLink.title} />
-                            </NavItem>
-                        ))}
-                    </Nav>
-                </Collapse>
-            </Navbar>
-        );
-    }
+    const toggle = () => setIsOpen(!isOpen);
+
+    return (
+        <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+            <Link href="/">
+                <a className="port-navbar-brand navbar-brand">Mihir Suchak</a>
+            </Link>
+            <NavbarToggler onClick={toggle} />
+            <Collapse isOpen={isOpen} navbar>
+                <Nav className="mr-auto" navbar>
+                    {NavLinkContent.map((navLink, index) => (
+                        <NavItem key={index} className="port-navbar-item">
+                            <BsNavLink href={navLink.href} title={navLink.title} />
+                        </NavItem>
+                    ))}
+                </Nav>
+            </Collapse>
+        </Navbar>
+    );
 }
