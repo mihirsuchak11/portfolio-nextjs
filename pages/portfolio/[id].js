@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'next/router';
 
-import BaseLayout from '../components/layouts/BaseLayout';
-import BasePage from '../components/BasePage';
+import BaseLayout from '@/components/layouts/BaseLayout';
+import BasePage from '@/components/BasePage';
 
 const PortfolioDetails = ({ portfolio }) => {
   return (
