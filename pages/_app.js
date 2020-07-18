@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style/main.scss';
+import '../styles/main.scss';
 
 export default function App({ Component, pageProps }) {
   return (

@@ -1,24 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react';
 import axios from 'axios';
 // import Link from 'next/link';
 import { Link } from '../routes'
 import BaseLayout from '../components/layouts/BaseLayout'
+import BasePage from '../components/BasePage';
 
-export default class Portfolio extends Component {
 
-    static async getInitialProps() {
-        let posts = [];
-        try {
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-            posts = res.data;
-        } catch(e) {
-            console.error(e);
-        }
+export default function Portfolio({ posts }) {
 
-        return { posts: posts.slice(0, 10) };
-    }
-
-    renderPost(posts) {
+    const renderPost = (posts) => {
         return posts.map(post =>
             <li key={post.id} style={{ 'fontSize': '20px' }}>
                 <Link route={`/portfolio/${post.id}`} >
@@ -29,15 +19,25 @@ export default class Portfolio extends Component {
             </li>);
     }
 
-    render() {
-        const { posts } = this.props;
-
-        return (
-            <BaseLayout>
+    return (
+        <BaseLayout>
+            <BasePage>
                 <ul>
-                    {this.renderPost(posts)}
+                    {renderPost(posts)}
                 </ul>
-            </BaseLayout>
-        )
+            </BasePage>
+        </BaseLayout>
+    )
+}
+
+Portfolio.getInitialProps = async () => {
+    let posts = [];
+    try {
+        const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        posts = res.data;
+    } catch(e) {
+        console.error(e);
     }
+
+    return { posts: posts.slice(0, 10) };
 }

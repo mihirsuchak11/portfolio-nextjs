@@ -8,6 +8,7 @@ const ROLES = ['Developers', 'Tech Lover', 'Team Player', 'React.js'];
 export default function index() {
   return (
     <BaseLayout className="cover">
+
       <div className="main-section">
         <div className="background-image">
           <img src="/images/background-index.png" />
